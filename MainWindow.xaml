@@ -1,0 +1,83 @@
+﻿<Window x:Class="DecoderVig.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:DecoderVig"
+        mc:Ignorable="d"
+        Title="Decoder v.0.4" MinHeight="670"
+        MinWidth="850"
+        Width="900"
+        Height="700">
+    <Grid>
+        <Border
+           Background="White"
+            BorderBrush="Red"
+            Height="560"
+            Width="800"
+            Margin="10,33,20,36"
+            Padding="30"
+            VerticalAlignment="Center"
+            CornerRadius="80">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="25" Color="DarkSlateBlue"  />
+            </Border.Effect>
+            <StackPanel>
+                
+                <TextBlock
+                    Text="Каталог алгоритмов "
+                    FontSize="25"
+                    HorizontalAlignment="Center"
+                    FontWeight="Bold"
+                    Margin="0 0 0 30"
+                    />
+                <Grid>
+                    <Button
+                    Padding="5 5 5 10"
+                    Content="Выйти"
+                    Click="Navigate_Click"
+                    HorizontalAlignment="Right"
+                    Width="100"
+                    Height="40"
+                    Style="{StaticResource MaterialDesignFlatLightBgButton}"/>
+                </Grid>
+                <WrapPanel   
+                        x:Name="NmbWrapper"    
+                        MaxWidth="230"
+                    Height="350"
+                        HorizontalAlignment="Center"
+                        Grid.Row="1"
+                        Grid.Column="0" Grid.ColumnSpan="3">
+
+                </WrapPanel>
+                <Grid>
+                    <TextBlock 
+                        Margin="0,10,30,0"
+                        HorizontalAlignment="Right"
+                        Foreground="Gray"
+                        Text ="By AntonyCryptInc." />
+
+                    <TextBlock 
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Right"
+                        Foreground="Gray"
+                        Text ="v.0.4" />
+
+                </Grid>
+                <Grid>
+                    <TextBlock
+                        Text="Decoder All rights reserved. "
+                        HorizontalAlignment="Center"
+                        Foreground="Gray"
+                        />
+                    <TextBlock 
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Right" 
+                        Foreground="Gray"
+                        Text ="© 2021-" />
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

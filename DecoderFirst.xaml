@@ -1,0 +1,160 @@
+﻿<Window x:Class="DecoderVig.DecoderFirst"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:DecoderVig"
+        mc:Ignorable="d"
+        Title="Decoder v.0.4"
+        MinHeight="600"
+        MinWidth="850"
+        Width="900"
+        Height="700">
+   
+    <Grid>
+        <Border
+           Background="White"
+            BorderBrush="Red"
+            Height="480"
+            Width="800"
+            Margin="10,33,20,36"
+            Padding="30"
+            VerticalAlignment="Center"
+            CornerRadius="80">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="25" Color="DarkSlateBlue"  />
+            </Border.Effect>
+            <StackPanel>
+
+                <TextBlock
+                    Text="Дешифратор Цезаря"
+                    FontSize="25"
+                    FontWeight="Bold"
+                    Margin="250 0 0 30"
+                    />
+                <Grid>
+                    <Button
+                        Padding="5 5 5 10"
+                        Content="Зашифровать"
+                        HorizontalAlignment="Left"
+                        Click="Encrypt_btn_Click"
+                        Style="{StaticResource MaterialDesignFlatDarkBgButton }"/>
+                    <Button
+                        Width="120"
+                        Margin="125 0 0 0"
+                        HorizontalAlignment="Left"
+                        Padding="5 5 5 10"
+                        Content="Расшифровать"
+                         Click="Decrypt_btn_Click"
+                        
+                        Style="{StaticResource MaterialDesignFlatLightBgButton }"
+                           />
+                    <Button
+                    Padding="5 5 5 10"
+                    Content="Назад"
+                    Click="Navigate_Click"
+                    HorizontalAlignment="Right"
+                    Width="80"
+                    Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
+                </Grid>
+                <DockPanel>
+                    <TextBox 
+                        x:Name="exprTextBox"
+                        SpellCheck.IsEnabled="True"
+                        MaxLength="250"
+                        Language="ru-ru"
+                         materialDesign:HintAssist.Hint="Введите ваше сообщение:" 
+                         Margin="5 30 0 0"
+                         FontSize="16"
+                         FontStyle="Italic"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" >
+                    
+                </TextBox>
+                </DockPanel>
+                <TextBlock
+                    Text="Полученное зашифрованное сообщение: "
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Margin="5 30 0 0"
+                    />
+                <Border BorderBrush="Gainsboro" BorderThickness="1" CornerRadius="8,8,8,8">
+                    <TextBox 
+                      x:Name="encrypted"
+                        IsReadOnly="True"
+                        Grid.Row="0"
+                        Grid.ColumnSpan="2"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Margin="5"
+                        Padding="1"
+                        Height="25"
+                       />
+                </Border>
+                <TextBlock
+                    Text="Полученное расшифрованное сообщение: "
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Margin="5 30 0 0"
+                    />
+                <Border BorderBrush="Gainsboro" BorderThickness="1" CornerRadius="8,8,8,8">
+                    <TextBox 
+                      x:Name="decrypted"
+                        IsReadOnly="True"
+                        Grid.Row="0"
+                        Grid.ColumnSpan="2"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Margin="5"
+                        Padding="1"
+                        Height="25"
+                       />
+                </Border>
+                <Grid>
+                    <Button
+                    Padding="5 5 5 10"
+                    Content="Очистить"
+                    Click="OnClean"
+                    HorizontalAlignment="Left"
+                    Margin="5 15 0 0"
+                    Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                    >
+                    <Button.ToolTip>
+                            <ToolTip 
+                                Background="Indigo"
+                              >
+                            <StackPanel>
+                                    <TextBlock Margin="3" Foreground="White">Нажмите, чтобы очистить все поля</TextBlock>
+                                </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                   </Button>
+                    <TextBlock 
+                        Margin="0,30,30,0"
+                        HorizontalAlignment="Right"
+                        Foreground="Gray"
+                        Text ="By AntonyCryptInc." />
+
+                    <TextBlock 
+                        Margin="0,30,0,0"
+                        HorizontalAlignment="Right"
+                        Foreground="Gray"
+                        Text ="v.0.4" />
+
+                </Grid>
+                <Grid>
+                    <TextBlock 
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Right" 
+                        Foreground="Gray"
+                        Text ="© 2021-" />
+                    <TextBlock
+                        Text="Decoder All rights reserved. "
+                        HorizontalAlignment="Center"
+                        Foreground="Gray"
+                        />
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
